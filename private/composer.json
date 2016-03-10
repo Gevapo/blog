@@ -1,0 +1,19 @@
+{
+    "name": "gevapo/vendor",
+    "description": "doctrine blog",
+    "require": {
+        "doctrine/orm": "^2.5",
+        "monolog/monolog": "^1.17",
+        "phpunit/phpunit": "^5.2"
+    },
+	"autoload":{
+		"psr-0":{"":"src/"}
+	},
+    "authors": [
+        {
+            "name": "Gevapo",
+            "email": "geert@geertvanpoucke.be"
+        }
+    ],
+    "minimum-stability": "stable"
+}
