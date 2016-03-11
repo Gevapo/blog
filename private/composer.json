@@ -4,7 +4,9 @@
     "require": {
         "doctrine/orm": "^2.5",
         "monolog/monolog": "^1.17",
-        "phpunit/phpunit": "^5.2"
+        "phpunit/phpunit": "^5.2",
+        "doctrine/data-fixtures": "1.0.*",
+        "gedmo/doctrine-extensions": "^2.4"
     },
 	"autoload":{
 		"psr-0":{"":"src/"}
