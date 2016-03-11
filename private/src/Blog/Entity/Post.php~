@@ -8,6 +8,11 @@ use Doctrine\ORM\Mapping\Index;
 use Doctrine\ORM\Mapping\Id;
 use Doctrine\ORM\Mapping\GeneratedValue;
 use Doctrine\ORM\Mapping\Column;
+use Doctrine\ORM\Mapping\OneToMany;
+use Doctrine\ORM\Mapping\ManyToMany;
+use Doctrine\ORM\Mapping\JoinTable;
+use Doctrine\ORM\Mapping\JoinColumn;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Blog Post entity
@@ -45,6 +50,30 @@ class Post
      * @Column(type="datetime")
      */
     protected $publicationDate;
+    /**
+     * @var Comment[]
+     *
+     * @OneToMany(targetEntity="Comment", mappedBy="post")
+     */
+    protected $comments;
+    /**
+     * @var Tag[]
+     *
+     * @ManyToMany(targetEntity="Tag", inversedBy="posts", fetch="EAGER", cascade={"persist"}, orphanRemoval=true)
+     * @JoinTable(
+     *      inverseJoinColumns={@JoinColumn(name="tag_name", referencedColumnName="name")}
+     * )
+     */
+    protected $tags;
+
+    /**
+     * Initializes collections
+     */
+    public function __construct()
+    {
+        $this->comments = new ArrayCollection();
+        $this->tags = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -123,5 +152,72 @@ class Post
     public function getPublicationDate()
     {
         return $this->publicationDate;
+    }
+
+    /**
+     * Add comments
+     *
+     * @param \Blog\Entity\Comment $comments
+     * @return Post
+     */
+    public function addComment(\Blog\Entity\Comment $comments)
+    {
+        $this->comments[] = $comments;
+        $comments->setPost($this);
+
+        return $this;
+    }
+
+    /**
+     * Remove comments
+     *
+     * @param \Blog\Entity\Comment $comments
+     */
+    public function removeComment(\Blog\Entity\Comment $comments)
+    {
+        $this->comments->removeElement($comments);
+    }
+
+    /**
+     * Get comments
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getComments()
+    {
+        return $this->comments;
+    }
+
+    /**
+     * Add tags
+     *
+     * @param \Blog\Entity\Tag $tags
+     * @return Post
+     */
+    public function addTag(\Blog\Entity\Tag $tags)
+    {
+        $this->tags[] = $tags;
+
+        return $this;
+    }
+
+    /**
+     * Remove tags
+     *
+     * @param \Blog\Entity\Tag $tags
+     */
+    public function removeTag(\Blog\Entity\Tag $tags)
+    {
+        $this->tags->removeElement($tags);
+    }
+
+    /**
+     * Get tags
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTags()
+    {
+        return $this->tags;
     }
 }

@@ -2,6 +2,59 @@
 
 All notable changes of the PHPUnit 5.2 release series are documented in this file using the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
+## [5.2.10] - 2016-03-03
+
+### Fixed
+
+* Fixed [#2039](https://github.com/sebastianbergmann/phpunit/issues/2039): TestDox does not handle snake_case test methods properly
+* Fixed a bug that caused no code coverage to be generated for tests that execute custom comparators
+
+## [5.2.9] - 2016-02-19
+
+### Changed
+
+* Improved the TestDox HTML report
+
+### Fixed
+
+* Fixed [#2083](https://github.com/sebastianbergmann/phpunit/issues/2083): Restored backwards compatibility in deprecated `setExpectedException()` method
+
+## [5.2.8] - 2016-02-18
+
+### Changed
+
+* Updated dependency information in `composer.json`
+
+## [5.2.7] - 2016-02-18
+
+### Changed
+
+* Improved the typography of the TestDox HTML report
+
+## [5.2.6] - 2016-02-16
+
+### Fixed
+
+* `PHPUnit_Framework_InvalidCoversTargetException` is now properly handled and results in a warning 
+
+## [5.2.5] - 2016-02-13
+
+### Fixed
+
+* Fixed [#2076](https://github.com/sebastianbergmann/phpunit/issues/2076): Code of custom comparators should not result in a test being marked as risky when PHPUnit is strict about @covers annotation usage
+
+## [5.2.4] - 2016-02-11
+
+### Fixed
+
+* Fixed [#2072](https://github.com/sebastianbergmann/phpunit/issues/2072): Paths in XML configuration file were not handled correctly when they have whitespace around them
+
+## [5.2.3] - 2016-02-08
+
+### Removed
+
+* Removed the implementation of [#1899](https://github.com/sebastianbergmann/phpunit/issues/1899) due to a [bug](https://github.com/sebastianbergmann/php-code-coverage/issues/420) in PHP_CodeCoverage
+
 ## [5.2.2] - 2016-02-07
 
 ### Removed
@@ -34,6 +87,14 @@ All notable changes of the PHPUnit 5.2 release series are documented in this fil
 
 * The `mapTestClassNameToCoveredClassName` configuration setting has been removed
 
+[5.2.10]: https://github.com/sebastianbergmann/phpunit/compare/5.2.9...5.2.10
+[5.2.9]: https://github.com/sebastianbergmann/phpunit/compare/5.2.8...5.2.9
+[5.2.8]: https://github.com/sebastianbergmann/phpunit/compare/5.2.7...5.2.8
+[5.2.7]: https://github.com/sebastianbergmann/phpunit/compare/5.2.6...5.2.7
+[5.2.6]: https://github.com/sebastianbergmann/phpunit/compare/5.2.5...5.2.6
+[5.2.5]: https://github.com/sebastianbergmann/phpunit/compare/5.2.4...5.2.5
+[5.2.4]: https://github.com/sebastianbergmann/phpunit/compare/5.2.3...5.2.4
+[5.2.3]: https://github.com/sebastianbergmann/phpunit/compare/5.2.2...5.2.3
 [5.2.2]: https://github.com/sebastianbergmann/phpunit/compare/5.2.1...5.2.2
 [5.2.1]: https://github.com/sebastianbergmann/phpunit/compare/5.2.0...5.2.1
 [5.2.0]: https://github.com/sebastianbergmann/phpunit/compare/5.1...5.2.0

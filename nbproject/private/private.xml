@@ -3,9 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Development/workspaces/LearnToCode/doctrineBlog/private/config/config.php</file>
-            <file>file:/D:/Development/workspaces/LearnToCode/doctrineBlog/private/src/bootstrap.php</file>
+            <file>file:/D:/Development/workspaces/LearnToCode/doctrineBlog/private/src/Blog/Entity/Comment.php</file>
+            <file>file:/D:/Development/workspaces/LearnToCode/doctrineBlog/private/src/Blog/DataFixtures/LoadCommentData.php</file>
+            <file>file:/D:/Development/workspaces/LearnToCode/doctrineBlog/public/view-post.php</file>
             <file>file:/D:/Development/workspaces/LearnToCode/doctrineBlog/private/src/Blog/Entity/Post.php</file>
+            <file>file:/D:/Development/workspaces/LearnToCode/doctrineBlog/private/src/Blog/Entity/Tag.php</file>
+            <file>file:/D:/Development/workspaces/LearnToCode/doctrineBlog/private/src/Blog/DataFixtures/LoadPostData.php</file>
+            <file>file:/D:/Development/workspaces/LearnToCode/doctrineBlog/private/bin/load-fixtures.php</file>
         </group>
     </open-files>
 </project-private>
